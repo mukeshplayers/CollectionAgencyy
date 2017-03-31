@@ -114,7 +114,6 @@
                 android:name="android.support.PARENT_ACTVITY"
                 android:value=".CA_Manager_Screen" />
         </activity>
-
         <activity
             android:name=".agent.CA_Agent_HomeScreen"
             android:label="@string/title_activity_ca__agent__home_screen"
@@ -125,12 +124,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.collectionagency.collectionagency.MainActivity" />
         </activity>
-
         <activity
             android:name=".agent.CA_Agent_Apply_Leave"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".agent.CA_Agent_HomeScreen">
-
+            android:parentActivityName=".agent.CA_Agent_HomeScreen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTVITY"
                 android:value=".CA_Agent_HomeScreen" />
@@ -138,14 +135,21 @@
 
         <activity
             android:name=".agent.AgentNotification"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".agent.CA_Agent_HomeScreen">
-
+            android:parentActivityName=".agent.CA_Agent_HomeScreen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTVITY"
                 android:value=".CA_Agent_HomeScreen" />
         </activity>
 
+        <activity android:name=".agent.AgentNotificationDetail"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".agent.AgentNotification">
+            <meta-data
+                android:name="android.support.PARENT_ACTVITY"
+                android:value=".AgentNotification">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>

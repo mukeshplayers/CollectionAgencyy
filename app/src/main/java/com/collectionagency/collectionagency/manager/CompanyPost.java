@@ -10,7 +10,8 @@ public class CompanyPost {
     String area;
     String city;
     String state;
-
+    String pincode;
+    String email;
 
     public String getCustomer_id() {
         return customer_id;
@@ -74,5 +75,21 @@ public class CompanyPost {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

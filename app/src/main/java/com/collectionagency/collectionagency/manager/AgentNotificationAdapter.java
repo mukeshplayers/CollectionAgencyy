@@ -1,13 +1,16 @@
 package com.collectionagency.collectionagency.manager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.collectionagency.collectionagency.R;
+import com.collectionagency.collectionagency.agent.AgentNotificationDetail;
 
 import java.util.ArrayList;
 
@@ -42,10 +45,11 @@ public class AgentNotificationAdapter extends BaseAdapter{
     static class ViewHolder
     {
         TextView id, name, address;
+        Button view_detail;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         ViewHolder holder = new ViewHolder();
 
@@ -56,6 +60,7 @@ public class AgentNotificationAdapter extends BaseAdapter{
             holder.id = (TextView)convertView.findViewById(R.id.agent_custid);
             holder.name = (TextView)convertView.findViewById(R.id.agent_custname);
             holder.address = (TextView)convertView.findViewById(R.id.agent_custaddress);
+            holder.view_detail = (Button)convertView.findViewById(R.id.btn_viewdetail);
 
             convertView.setTag(holder);
         }
@@ -67,6 +72,31 @@ public class AgentNotificationAdapter extends BaseAdapter{
             holder.id.setText("Customer ID: "+posts.get(position).getCustomer_id());
             holder.name.setText("Name: "+posts.get(position).getName());
             holder.address.setText("Address: "+posts.get(position).getAddress());
+
+            final String mobile = posts.get(position).getMobile_no();
+            final String amount = posts.get(position).getAmount();
+            final String area = posts.get(position).getArea();
+            final String city = posts.get(position).getCity();
+            final String state = posts.get(position).getState();
+
+
+            holder.view_detail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context.getApplicationContext(), AgentNotificationDetail.class);
+
+                    intent.putExtra("customerid", posts.get(position).getCustomer_id());
+                    intent.putExtra("name", posts.get(position).getName());
+                    intent.putExtra("mobile", mobile);
+                    intent.putExtra("amount", amount);
+                    intent.putExtra("address", posts.get(position).getAddress());
+                    intent.putExtra("area", area);
+                    intent.putExtra("city", city);
+                    intent.putExtra("state", state);
+
+                    context.startActivity(intent);
+                }
+            });
 
             return convertView;
     }

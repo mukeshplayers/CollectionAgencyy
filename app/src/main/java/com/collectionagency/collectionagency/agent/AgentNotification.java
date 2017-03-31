@@ -1,9 +1,11 @@
 package com.collectionagency.collectionagency.agent;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.collectionagency.collectionagency.R;
@@ -146,8 +148,6 @@ public class AgentNotification extends AppCompatActivity {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                CompanyPost post = new CompanyPost();
-
                 String id = jsonObject.getString("Customer_id");
                 String name = jsonObject.getString("Name");
                 String mobileno = jsonObject.getString("Mobile No");
@@ -156,6 +156,8 @@ public class AgentNotification extends AppCompatActivity {
                 String area = jsonObject.getString("Area");
                 String city = jsonObject.getString("City");
                 String state = jsonObject.getString("State");
+
+                CompanyPost post = new CompanyPost();
 
                 post.setCustomer_id(id);
                 post.setName(name);
@@ -175,6 +177,5 @@ public class AgentNotification extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.list_agent_notification);
         adapter = new AgentNotificationAdapter(AgentNotification.this, R.id.layout_agent_rows, arrayList);
         listView.setAdapter(adapter);
-
     }
 }

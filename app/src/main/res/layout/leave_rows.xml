@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_leave_rows"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agent ID: "
+            android:id="@+id/leave_agentid"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agent Name: "
+            android:id="@+id/leave_agentname"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason: "
+            android:id="@+id/leave_reason"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From Date: "
+                android:id="@+id/leave_fromdate"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To Date: "
+                android:id="@+id/leave_todate"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="25dp"
+                android:textStyle="bold"
+                android:text="APPROVE"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FAFAFA"
+                android:id="@+id/btn_approve"
+                android:textSize="10sp"/>
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:text="REJECT"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FAFAFA"
+                android:id="@+id/btn_reject"
+                android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

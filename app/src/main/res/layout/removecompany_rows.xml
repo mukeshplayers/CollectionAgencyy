@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_removecompany_rows"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company ID "
+            android:id="@+id/remove_cmpnyid"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name "
+            android:id="@+id/remove_cmpnyname"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email "
+            android:id="@+id/remove_cmpnyemail"/>
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:text="REMOVE"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FAFAFA"
+            android:id="@+id/btn_removecompany"
+            android:textSize="10sp"/>
+
+    </LinearLayout>
+</LinearLayout>

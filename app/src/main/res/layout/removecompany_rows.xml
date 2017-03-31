@@ -29,16 +29,14 @@
             android:text="Email "
             android:id="@+id/remove_cmpnyemail"/>
 
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="30dp"
-            android:textStyle="bold"
-            android:text="REMOVE"
-            android:background="@drawable/rounded_button"
-            android:textColor="#FAFAFA"
-            android:id="@+id/btn_removecompany"
-            android:textSize="10sp"/>
-
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:textStyle="bold"
+                android:text="REMOVE"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FAFAFA"
+                android:id="@+id/btn_removecompany"
+                android:textSize="10sp"/>
     </LinearLayout>
 </LinearLayout>

@@ -29,15 +29,22 @@
             android:text="Address: "
             android:id="@+id/agent_custaddress"/>
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:textStyle="bold"
-            android:text="View"
-            android:background="@drawable/rounded_button"
-            android:textColor="#FAFAFA"
-            android:id="@+id/btn_viewdetail"
-            android:textSize="10sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:textStyle="bold"
+                android:text="View"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FAFAFA"
+                android:id="@+id/btn_viewdetail"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

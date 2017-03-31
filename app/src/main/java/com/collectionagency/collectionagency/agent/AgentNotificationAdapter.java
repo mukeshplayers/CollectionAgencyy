@@ -1,7 +1,8 @@
-package com.collectionagency.collectionagency.manager;
+package com.collectionagency.collectionagency.agent;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.collectionagency.collectionagency.R;
-import com.collectionagency.collectionagency.agent.AgentNotificationDetail;
+import com.collectionagency.collectionagency.manager.CompanyPost;
 
 import java.util.ArrayList;
 
-public class AgentNotificationAdapter extends BaseAdapter{
+public class AgentNotificationAdapter extends BaseAdapter {
 
     Context context;
     int layoutResourceId;
@@ -60,8 +61,8 @@ public class AgentNotificationAdapter extends BaseAdapter{
             holder.id = (TextView)convertView.findViewById(R.id.agent_custid);
             holder.name = (TextView)convertView.findViewById(R.id.agent_custname);
             holder.address = (TextView)convertView.findViewById(R.id.agent_custaddress);
-            holder.view_detail = (Button)convertView.findViewById(R.id.btn_viewdetail);
 
+            holder.view_detail = (Button)convertView.findViewById(R.id.btn_viewdetail);
             convertView.setTag(holder);
         }
 
@@ -78,7 +79,8 @@ public class AgentNotificationAdapter extends BaseAdapter{
             final String area = posts.get(position).getArea();
             final String city = posts.get(position).getCity();
             final String state = posts.get(position).getState();
-
+            final String pincode = posts.get(position).getPincode();
+            final String email = posts.get(position).getEmail();
 
             holder.view_detail.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,11 +95,12 @@ public class AgentNotificationAdapter extends BaseAdapter{
                     intent.putExtra("area", area);
                     intent.putExtra("city", city);
                     intent.putExtra("state", state);
+                    intent.putExtra("pincode", pincode);
+                    intent.putExtra("email", email);
 
                     context.startActivity(intent);
                 }
             });
-
             return convertView;
     }
 }

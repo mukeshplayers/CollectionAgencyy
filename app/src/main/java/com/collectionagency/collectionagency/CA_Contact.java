@@ -82,15 +82,15 @@ public class CA_Contact extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == PER_REQUEST_CODE){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                startActivity(intent);
-            }
-            else {
-                Toast.makeText(getApplication(), "Permission is not granted", Toast.LENGTH_SHORT).show();
+        @Override
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+            if(requestCode == PER_REQUEST_CODE){
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(getApplication(), "Permission is not granted", Toast.LENGTH_SHORT).show();
+                }
             }
         }
-    }
 }

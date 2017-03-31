@@ -69,6 +69,20 @@
             android:textSize="18sp"
             android:id="@+id/tv_custstate"/>
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/tv_custpincode"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/tv_custemail"/>
+
         <Button
             android:layout_marginTop="20dp"
             android:layout_width="120dp"
@@ -78,6 +92,18 @@
             android:background="@drawable/rounded_button"
             android:textColor="#FAFAFA"
             android:id="@+id/btn_paynow"
-            android:textSize="20sp"/>
+            android:textSize="10sp"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:textStyle="bold"
+            android:text="Open Bill"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FAFAFA"
+            android:id="@+id/btn_viewpdf"
+            android:textSize="10sp"/>
+
     </LinearLayout>
 </LinearLayout>

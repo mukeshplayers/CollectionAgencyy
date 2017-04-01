@@ -1,93 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ca_agent_apply_leave"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".agent.CA_Agent_Apply_Leave">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/etxt_fromdate"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:hint="From Date"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/etxt_todate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:hint="To Date"
+        android:maxLines="1"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="From :"
-            android:textSize="20sp"
-            android:layout_marginRight="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Date of Birth"
-            android:id="@+id/selected_date_from"
-            android:textSize="20sp"
-            android:layout_marginRight="3dp"/>
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:onClick="showDatePickerDialog"
-            android:background="@drawable/ic_dob"
-            android:id="@+id/button" />
-    </LinearLayout>
-
-
-
-
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="To :"
-            android:textSize="20sp"
-            android:layout_marginRight="25dp"/>
+        android:hint="Reason of Leave"
+        android:gravity="center"
+        android:maxLines="1"
+        android:id="@+id/et_reason" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Date of Birth"
-            android:id="@+id/selected_date_to"
-            android:layout_marginLeft="25dp"
-            android:textSize="20sp"
-            android:layout_marginRight="3dp"/>
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:onClick="showDatePickerDialog1"
-            android:background="@drawable/ic_dob"
-            android:id="@+id/button1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:textStyle="bold"
+        android:text="Submit"
+        android:id="@+id/btn_leave_submit"
+        android:inputType="text"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apply"
-            android:background="@drawable/rounded_button"
-            android:textColor="#FAFAFA"
-            android:id="@+id/ca_btn_register1" />
-    </LinearLayout>
-
+        android:textColor="#FAFAFA"
+        android:textSize="10sp"
+        android:background="@drawable/rounded_button"/>
 </LinearLayout>

@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.collectionagency.collectionagency.MainActivity;
 import com.collectionagency.collectionagency.R;
 import com.collectionagency.collectionagency.manager.CA_Manager_ChangePassword;
 
@@ -85,6 +86,8 @@ public class CA_Agent_HomeScreen extends AppCompatActivity
         }
 
         else if (id == R.id.agent_logout) {
+            Intent intent = new Intent(CA_Agent_HomeScreen.this, MainActivity.class);
+            startActivity(intent);
             return true;
         }
 

@@ -30,6 +30,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class AgentNotificationDetail extends AppCompatActivity implements View.OnClickListener{
@@ -39,6 +40,7 @@ public class AgentNotificationDetail extends AppCompatActivity implements View.O
     TextView tvcustid, tvname, tvmobile, tvamount, tvaddress, tvarea, tvcity, tvstate, tvpincode, tvemail;
     File myFile;
     Button savepdf, viewpdf;
+    Button emailpdf;
 
     private Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 32, Font.BOLD);
     private Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 28);
@@ -93,14 +95,16 @@ public class AgentNotificationDetail extends AppCompatActivity implements View.O
 
         savepdf = (Button)findViewById(R.id.btn_paynow);
         viewpdf = (Button)findViewById(R.id.btn_viewpdf);
+        emailpdf = (Button)findViewById(R.id.btn_emailpdf);
 
         savepdf.setOnClickListener(this);
         viewpdf.setOnClickListener(this);
-
+        emailpdf.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
+
         if (view.getId() == R.id.btn_paynow) {
             try {
                 createPDF();
@@ -128,18 +132,40 @@ public class AgentNotificationDetail extends AppCompatActivity implements View.O
                 Toast.makeText(AgentNotificationDetail.this, "Sorry! You either haven't paid or bill isn't generated.", Toast.LENGTH_LONG).show();
             }
         }
+/*
+        if (view.getId() == R.id.btn_emailpdf)
+        {
+            try {
+                Intent email_intent = new Intent(Intent.ACTION_SEND);
+
+                email_intent.putExtra(Intent.EXTRA_SUBJECT, "[Collecton Agency]: "+name);
+                email_intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+                email_intent.putExtra(Intent.EXTRA_TEXT, "Dear Customer, \nThank you for paying amount, Please find your bill.");
+
+                Uri uri = Uri.parse(myFile.getAbsolutePath());
+
+                email_intent.putExtra(Intent.EXTRA_STREAM, uri);
+                email_intent.setType("message/rfc822");
+                startActivity(email_intent);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                Toast.makeText(AgentNotificationDetail.this, "Bill receipt sent.", Toast.LENGTH_SHORT).show();
+            }
+        }*/
     }
 
     private void createPDF() throws IOException, DocumentException{
 
-        File ourpdfFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Payment");
+        final File ourpdfFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Payment");
 
         if (!ourpdfFolder.exists()){
             ourpdfFolder.mkdir();
         }
 
         Date date = new Date();
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(date);
+        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(date);
 
         myFile = new File(ourpdfFolder + timeStamp + ".pdf");
 
@@ -165,6 +191,11 @@ public class AgentNotificationDetail extends AppCompatActivity implements View.O
 
         paragraph.setAlignment(Element.ALIGN_CENTER);
         paragraph.setPaddingTop(20);
+        document.add(paragraph);
+
+
+        paragraph = new Paragraph("Bill No: " +timeStamp, normalFont);
+        paragraph.setAlignment(Element.ALIGN_LEFT);
         document.add(paragraph);
 
         paragraph = new Paragraph("Customer ID: " +custid, normalFont);
@@ -212,5 +243,32 @@ public class AgentNotificationDetail extends AppCompatActivity implements View.O
         document.add(paragraph);
 
         document.close();
+
+
+        emailpdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    Uri URI = Uri.parse("file://" + myFile.getAbsolutePath());
+
+                    Intent email_intent = new Intent(Intent.ACTION_SEND);
+
+                    email_intent.putExtra(Intent.EXTRA_SUBJECT, "[Collecton Agency]Payment: " + name);
+                    email_intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+                    email_intent.putExtra(Intent.EXTRA_TEXT, "Dear Customer, \nThank you for paying amount, Please find your bill.");
+                    email_intent.putExtra(Intent.EXTRA_STREAM, URI);
+                    email_intent.setType("message/rfc822");
+
+                    startActivity(Intent.createChooser(email_intent, "Send email..."));
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(AgentNotificationDetail.this, "Sorry! You bill hasn't generated yet.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 }

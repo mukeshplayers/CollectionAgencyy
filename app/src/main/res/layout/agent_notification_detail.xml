@@ -105,5 +105,16 @@
             android:id="@+id/btn_viewpdf"
             android:textSize="10sp"/>
 
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:textStyle="bold"
+            android:text="Email Bill"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FAFAFA"
+            android:id="@+id/btn_emailpdf"
+            android:textSize="10sp"/>
+
     </LinearLayout>
 </LinearLayout>

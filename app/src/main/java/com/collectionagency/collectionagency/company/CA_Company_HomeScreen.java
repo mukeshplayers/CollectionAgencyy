@@ -13,7 +13,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -105,6 +107,7 @@ public class CA_Company_HomeScreen extends ActionBarActivity {
         {
             Intent intent = new Intent(CA_Company_HomeScreen.this, MainActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

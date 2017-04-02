@@ -16,9 +16,6 @@
         android:focusableInTouchMode="true"
         tools:context=".manager.CA_Manager_Agent_Registration">
 
-
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_gravity="center"
@@ -32,11 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="First Name"
+                android:singleLine="true"
                 android:maxLines="1"
                 android:gravity="center"
                 android:id="@+id/ca_agent_firstname"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Last Name"
@@ -46,6 +45,7 @@
                 android:id="@+id/ca_agent_lastname"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Address"
@@ -54,6 +54,7 @@
                 android:id="@+id/ca_agent_address"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Area"
@@ -62,6 +63,7 @@
                 android:id="@+id/ca_agent_area"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pincode"
@@ -70,8 +72,8 @@
                 android:layout_below="@id/ca_agent_area"
                 android:id="@+id/ca_agent_pincode"/>
 
-
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -80,6 +82,7 @@
                 android:id="@+id/ca_agent_email_id"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone"
@@ -89,15 +92,16 @@
                 android:id="@+id/ca_agent_phone_number"/>
 
             <EditText
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="PassWord"
                 android:gravity="center"
-
                 android:layout_below="@id/ca_agent_phone_number"
                 android:id="@+id/ca_agent_password"/>
 
             <Spinner
+                android:singleLine="true"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="40dp"
@@ -108,7 +112,9 @@
                 android:entries="@array/city_arrays"
                 android:layout_centerHorizontal="true">
             </Spinner>
+
             <Spinner
+                android:singleLine="true"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
@@ -119,6 +125,7 @@
                 android:layout_below="@id/ca_agent_city"
                 android:entries="@array/state_arrays">
             </Spinner>
+
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,35 +134,33 @@
                 android:layout_below="@id/ca_agent_state"
                 android:weightSum="2"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender : "
+                android:id="@+id/ca_agent_genderlbl"
+                android:textSize="20sp"
+                android:layout_below="@+id/ca_agent_gender"
+                android:layout_centerHorizontal="true" />
 
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gender : "
-                    android:id="@+id/ca_agent_genderlbl"
-                    android:textSize="20sp"
-                    android:layout_below="@+id/ca_agent_gender"
-                    android:layout_centerHorizontal="true" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Male"
+                android:id="@+id/ca_agent_male"
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Male"
-                    android:id="@+id/ca_agent_male"
+                />
 
-                    />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="Female"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:id="@+id/ca_agent_female"
-                    android:layout_below="@+id/ca_agent_gender"
-                    />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Female"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/ca_agent_female"
+                android:layout_below="@+id/ca_agent_gender"
+                />
 
             </RadioGroup>
 
@@ -165,10 +170,10 @@
                 android:hint="AAdhar Number"
                 android:inputType="textPassword"
                 android:gravity="center"
+                android:singleLine="true"
                 android:layout_below="@id/ca_agent_gender"
                 android:id="@+id/ca_agent_aadhar_number"/>
         </RelativeLayout>
-
 
         <TextView
             android:layout_width="wrap_content"

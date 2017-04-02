@@ -88,6 +88,7 @@ public class CA_Agent_HomeScreen extends AppCompatActivity
         else if (id == R.id.agent_logout) {
             Intent intent = new Intent(CA_Agent_HomeScreen.this, MainActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 

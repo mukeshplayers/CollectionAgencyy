@@ -86,6 +86,7 @@ public class CA_Manager_Screen extends AppCompatActivity
         {
             Intent intent = new Intent(CA_Manager_Screen.this, MainActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 

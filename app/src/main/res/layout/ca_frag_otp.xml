@@ -13,6 +13,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter OTP"
             android:maxLines="1"
+            android:singleLine="true"
             android:textAlignment="center"
             android:id="@+id/ca_et_otp"
             android:layout_marginTop="10dp" />

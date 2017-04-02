@@ -1,5 +1,6 @@
 package com.collectionagency.collectionagency.company;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
@@ -8,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +20,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.collectionagency.collectionagency.CA_Login_MainActivity;
+import com.collectionagency.collectionagency.MainActivity;
 import com.collectionagency.collectionagency.R;
 
 import java.io.BufferedReader;
@@ -25,8 +29,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public class CA_Company_HomeScreen extends ListActivity {
+public class CA_Company_HomeScreen extends ActionBarActivity {
 
     TextView lb1;
     Button btnUpload;
@@ -42,9 +47,13 @@ public class CA_Company_HomeScreen extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ca_company_home_screen_activity);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Company");
+
         lb1 = (TextView)findViewById(R.id.txtresulttext);
         btnUpload = (Button)findViewById(R.id.ca_company_btn_upload);
-        lv = getListView();
+        //lv = getListView();
+        lv = (ListView)findViewById(R.id.list_excel);
 
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +71,12 @@ public class CA_Company_HomeScreen extends ListActivity {
         myList = controller_excel.getPendingData();
 
         if (myList.size() != 0) {
-            ListView lv = getListView();
+            //ListView lv = getListView();
+            ListView lv = (ListView)findViewById(R.id.list_excel);
             ListAdapter adapter = new SimpleAdapter(CA_Company_HomeScreen.this, myList,
                     R.layout.ca_company_excel_rows, new String[]{"Srno", "Name", "Mobileno"}, new int[]{
                     R.id.excel_company_srno, R.id.excel_company_name, R.id.excel_company_mobno});
-            setListAdapter(adapter);
+            lv.setAdapter(adapter);
             lb1.setText("");
         }
 
@@ -88,6 +98,13 @@ public class CA_Company_HomeScreen extends ListActivity {
             Intent intent = new Intent(CA_Company_HomeScreen.this,CA_Company_ChangePassword.class);
             startActivity(intent);
 
+            return true;
+        }
+
+        else if (id == R.id.ca_company_logout)
+        {
+            Intent intent = new Intent(CA_Company_HomeScreen.this, MainActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -158,11 +175,12 @@ public class CA_Company_HomeScreen extends ListActivity {
         myList= controller_excel.getPendingData();
 
         if (myList.size() != 0) {
-            ListView lv = getListView();
+            //ListView lv = getListView();
+            ListView lv = (ListView)findViewById(R.id.list_excel);
             ListAdapter adapter = new SimpleAdapter(CA_Company_HomeScreen.this, myList,
                     R.layout.ca_company_excel_rows, new String[]{"Srno", "Name", "Mobileno"}, new int[]{
                     R.id.excel_company_srno, R.id.excel_company_name, R.id.excel_company_mobno});
-            setListAdapter(adapter);
+            lv.setAdapter(adapter);
             lb1.setText("Data Imported");
         }
     }

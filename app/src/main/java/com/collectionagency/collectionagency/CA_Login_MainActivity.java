@@ -37,23 +37,43 @@ public class CA_Login_MainActivity extends Fragment {
         ca_contact = (Button)view.findViewById(R.id.ca_contact_us);
 
         //Login
+
         ca_btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
 
-                if(username.getText().toString().equals("manager") && password.getText().toString().equals("manager")) {
-                    Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Manager_Screen.class);
-                    startActivity(intent);
+                    username.setError("This field can not be blank");
+                    password.setError("This field can not be blank");
                 }
 
-                else if(username.getText().toString().equals("company") && password.getText().toString().equals("company")) {
-                    Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
-                    startActivity(intent);
-                }
+                else {
 
-                else if(username.getText().toString().equals("agent") && password.getText().toString().equals("agent")) {
-                    Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
-                    startActivity(intent);
+                    if (username.getText().toString().equals("manager") && password.getText().toString().equals("manager")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Manager_Screen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                    }
+                    else if(username.getText().toString().equals("company") && password.getText().toString().equals("company")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                    }
+
+                    else if(username.getText().toString().equals("agent") && password.getText().toString().equals("agent")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                    }
                 }
             }
         });

@@ -36,10 +36,11 @@ public class CA_Manager_ChangePassword extends AppCompatActivity {
         btn_chanagepassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (new1.equals(new2)) {
-                    Toast.makeText(CA_Manager_ChangePassword.this, "Password Changed Successfully!", Toast.LENGTH_SHORT).show();
+                if (new1.equals(new2))
+                {
+                        Toast.makeText(CA_Manager_ChangePassword.this, "Password Changed Successfully!", Toast.LENGTH_SHORT).show();
                 }
-                else if (!new1.equals(new2)) {
+                else {
                     Toast.makeText(CA_Manager_ChangePassword.this, "Password Didn't Match.", Toast.LENGTH_SHORT).show();
 
                 }

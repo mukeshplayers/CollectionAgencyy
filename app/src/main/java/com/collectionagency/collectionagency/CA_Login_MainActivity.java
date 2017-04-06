@@ -51,11 +51,13 @@ public class CA_Login_MainActivity extends Fragment {
 
                     if (username.getText().toString().equals("manager") && password.getText().toString().equals("manager")) {
                         Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Manager_Screen.class);
+                        startActivity(intent);
                         username.setError(null);
                         password.setError(null);
-                        startActivity(intent);
                         username.clearFocus();
                         password.clearFocus();
+                        username.setText("");
+                        password.setText("");
                     }
                     else if(username.getText().toString().equals("company") && password.getText().toString().equals("company")) {
                         Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
@@ -64,6 +66,86 @@ public class CA_Login_MainActivity extends Fragment {
                         startActivity(intent);
                         username.clearFocus();
                         password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+
+                    else if(username.getText().toString().equals("vodafone@vodafone.com") && password.getText().toString().equals("vodafone")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("airtel@airtel.com") && password.getText().toString().equals("airtel")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("idea@idea.com") && password.getText().toString().equals("idea")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("telenor@telenor.com") && password.getText().toString().equals("telenor")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("docomo@docomo.com") && password.getText().toString().equals("docomo")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("aircel@aircel.com") && password.getText().toString().equals("aircel")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("reliance@reliance.com") && password.getText().toString().equals("reliance")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(), CA_Company_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
                     }
 
                     else if(username.getText().toString().equals("agent") && password.getText().toString().equals("agent")) {
@@ -73,6 +155,63 @@ public class CA_Login_MainActivity extends Fragment {
                         startActivity(intent);
                         username.clearFocus();
                         password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("aakashbhatia@gmail.com") && password.getText().toString().equals("aakash")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("gautammishra@gmail.com") && password.getText().toString().equals("gautam")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("ashwinparekh@gmail.com") && password.getText().toString().equals("ashwin")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("jaiminpanchal@gmail.com") && password.getText().toString().equals("jaimin")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
+                    }
+
+                    else if(username.getText().toString().equals("rajveerdataniya@gmail.com") && password.getText().toString().equals("rajveer")) {
+                        Intent intent = new Intent(CA_Login_MainActivity.this.getActivity(),CA_Agent_HomeScreen.class);
+                        username.setError(null);
+                        password.setError(null);
+                        startActivity(intent);
+                        username.clearFocus();
+                        password.clearFocus();
+                        username.setText("");
+                        password.setText("");
                     }
                 }
             }

@@ -21,6 +21,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.collectionagency.collectionagency.CA_Login_MainActivity;
 import com.collectionagency.collectionagency.MainActivity;
@@ -43,6 +44,7 @@ public class CA_Company_HomeScreen extends ActionBarActivity {
     ListAdapter adapter;
     ArrayList<HashMap<String, String>> myList;
     public static final int requestcode = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,8 @@ public class CA_Company_HomeScreen extends ActionBarActivity {
                 }
             }
         });
+
+
 
         myList = controller_excel.getPendingData();
 

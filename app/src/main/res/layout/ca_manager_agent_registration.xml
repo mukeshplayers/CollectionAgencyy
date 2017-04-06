@@ -64,6 +64,7 @@
 
             <EditText
                 android:singleLine="true"
+                android:maxLength="6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pincode"
@@ -86,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone"
+                android:maxLength="10"
                 android:inputType="number"
                 android:gravity="center"
                 android:layout_below="@id/ca_agent_email_id"
@@ -95,7 +97,7 @@
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PassWord"
+                android:hint="Password"
                 android:gravity="center"
                 android:layout_below="@id/ca_agent_phone_number"
                 android:id="@+id/ca_agent_password"/>
@@ -167,9 +169,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="AAdhar Number"
-                android:inputType="textPassword"
+                android:hint="Aadhar Card Number"
                 android:gravity="center"
+                android:maxLength="12"
+                android:inputType="number"
                 android:singleLine="true"
                 android:layout_below="@id/ca_agent_gender"
                 android:id="@+id/ca_agent_aadhar_number"/>
